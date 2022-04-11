@@ -20,6 +20,20 @@ body {
     
 }
 
+#img_result {
+    position: relative;
+    top: 50px;
+}
+
+#container-main-details {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+}
+
 #camera-window {
     border-radius: 10px;
 }
@@ -61,6 +75,13 @@ body {
     background-color: #379683;
 }
 
+button {
+    border: none;
+  
+    padding: 15px;
+    font-family: robotobold;
+}
+
 #rect-3 {
     height: 17px;
     width: 218px;
@@ -73,6 +94,34 @@ body {
     margin: auto;
     font-family: robotoregular;
     font-size: 30px;
+}
+
+
+
+h4, h2 {
+    font-family: robotobold
+}
+
+.item {
+    font-family: robotolight
+}
+
+#result-description {
+    position: relative;
+    top: 70px;
+    text-align: center;
+    font-family: robotolight;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#reveal {
+    display: none;
+}
+
+#barcode {
+    font-family: robotolight;
 }
 
 #description-text {

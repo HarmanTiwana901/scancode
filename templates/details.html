@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScanCode | Scan! </title>
+</head>
+<body>
+    <div id="container-main-details">
+        
+        <div class="image-wrapper">
+            <img class="center" height="37" src="../static/images/barcode.png"/>
+        </div>
+        <h1 id="title-text">Scan<span class="bold">Code</span></h1>
+        <p id="description-text">
+          Product Details
+           
+        </p>
+
+        <script>
+            function reveal() {
+                var x = document.getElementById("reveal")
+                if(x.style.display === "none" ) {
+                    x.style.display = "block"
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+        <p id="description-text">
+            {% block content %}
+                {% for item in data[0]["products"] %}
+                    <h2>Barcode UPC: </h2> <p class="item">{{item.barcode_formats}}</p> 
+                    <h4>Product Title: </h4><p class="item">{{item.title}}</p>
+                    <h4>Price: </h4> <p class="item">${{item['stores'][0].price}}</p>
+                    <h4>Product Brand: </h4><p class="item">{{item.brand}}</p><br>
+                    <h4>Product Description: </h4> <p class="item">{{item.description}}</p>
+                    <h4>Category:</h4> <p class="item">{{item.category}}</p>
+                    <h4>Available @: </h4><a href="{{item['stores'][0].link}}">{{item["stores"][0].name}}</a><br><br><br>
+                    
+                    <Button onclick="reveal()">Reveal Extra Info</Button>
+
+                    <h4 id="reveal">{{item}}</h4>
+                {% endfor %}
+                
+            {% endblock %}
+          </p>
+
+         
+          
+                
+            
+        
+    </div>
+   
+       
+
+</body>
+</html>

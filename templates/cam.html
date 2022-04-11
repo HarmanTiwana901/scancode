@@ -15,7 +15,6 @@
 </style>
 <body>
     
-    
     <div id="camHelp-container">
         <div class="image-wrapper">
             <img class="center" height="37" src="../static/images/barcode.png"/>
@@ -26,8 +25,22 @@
         
         </p>
     </div>
+    <style>
+        button {
+            width: 20%;
+        }
+    </style>
+    <script>
+        function redirect() {
+            window.location.href = "/details"
+        }
+    </script>
     <div id="container-main-cam">
-        <img id="camera-window" src="{{ url_for('video_feed') }}" width="30%">
+        <img id="camera-window" src="{{ url_for('video_feed') }}" width="30%"><br>
+        <button onclick="redirect()">Details</button>
     </div>
+
+    
+    
 </body>
 </html>
